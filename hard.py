@@ -7,7 +7,6 @@ class Analyze:
 
     def start(self):
         self.result = self.estimate_algorithm_complexity(self.code)
-        return self.result
 
     def estimate_algorithm_complexity(self, block):
         try:
@@ -23,7 +22,7 @@ class Analyze:
         def visit(node):
             nonlocal operation_count, loop_count, sorting_detected
             if isinstance(node, ast.For) or isinstance(node, ast.While):
-                loop_count += 1
+                loop_count += 2
             elif isinstance(node, ast.BinOp) or isinstance(node, ast.UnaryOp):
                 operation_count += 1
             elif isinstance(node, ast.Call):

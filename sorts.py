@@ -1,6 +1,6 @@
 from telebot import formatting
 
-sort_dict = {
+sort_hard_dict = {
     "Сортировка Хоара": """
 def quicksort(arr):
     if len(arr) <= 1:
@@ -42,7 +42,7 @@ def quicksort(dataset):
 """
 }
 
-sort_hard_dict = {
+sort_dict = {
     "Сортировка Хоара": "Сложность: O(n*log(n))",
     "Сортировка вставками": "Сложность: O(n^2)",
     "Сортировка выбором": "Сложность: O(n^2)"
@@ -50,7 +50,7 @@ sort_hard_dict = {
 
 
 def sort(name: str):
-    code = formatting.hcode(sort_dict[name])
-    sort_info = f"{name}:\n\nКод:\n{code}\n\n{sort_hard_dict[name]}"
+    code = formatting.hbold(sort_dict[name])
+    sort_info = f"{name}:\n\nКод:\n{sort_dict[name]}\n\n{sort_hard_dict[name]}"
     return sort_info
 
